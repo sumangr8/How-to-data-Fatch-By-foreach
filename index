@@ -1,0 +1,27 @@
+<table>
+    <thead>
+        <tr>
+            <th>Team</th>
+            <th>Sip</th>
+            
+       </tr>
+    </thead>
+
+    <tbody>
+       <?php 
+	$con=mysqli_connect("localhost","root","","calling");
+	$records = mysqli_query($con,'select * from table1') or die("Query fail: " . mysqli_error());
+	foreach( $records as $data ) // using foreach  to display each element of array
+         {
+         ?>
+         	<tr>
+         		<td><?php echo $data['team'];  ?></td>
+         		<td><?php echo $data['slot_no'];  ?></td>
+         	</tr>
+
+         <?php
+                
+         }
+       ?>
+    </tbody>        
+</table>
